@@ -30,3 +30,14 @@
     transform: rotate(360deg);
   }
 }
+
+.BookList{
+  width: 60%;
+  float: left;
+  border:1px solid red;
+}
+.Bookcart{
+  width: 35%;
+  float: left;
+  border:1px solid red;
+}
