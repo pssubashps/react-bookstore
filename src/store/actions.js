@@ -1,17 +1,17 @@
 import axios from '../axios/axios';
 
-export const setBooks = (books) => {
+export const setBooks = (query,books,page) => {
   return {
     type: 'FETCH',
-    books:books
+    payload:{query:query,data:books,page:page}
 
   }
 }
-export const fetchBooks =   () => {
+export const fetchBooks =   (query,page,startIndex) => {
   return dispatch => {
-      axios.get('?q=reactjs&maxResults=10').then(
+      axios.get(`?q=${query}&maxResults=4&startIndex=${startIndex}`).then(
         res =>{
-          dispatch(setBooks(res.data));
+          dispatch(setBooks(query,res.data,page));
         }
       )
   }
